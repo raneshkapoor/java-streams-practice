@@ -1,7 +1,35 @@
 package com.streams.practice;
 
+import com.streams.practice.data.Person;
+import com.streams.practice.library.Comparator;
+import com.streams.practice.util.PersonFixture;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 public class ComparatorTest {
 
+    @Test
+    void testComparator_withAge() {
 
+        List<Person> persons = PersonFixture.getTestData();
+        Comparator<Person> personComparator = Comparator.comparing(Person::getAge);
+
+        Assertions.assertEquals(0, personComparator.compare(persons.get(0), persons.get(3)));
+        Assertions.assertEquals(1, personComparator.compare(persons.get(2), persons.get(3)));
+        Assertions.assertEquals(-1, personComparator.compare(persons.get(1), persons.get(2)));
+    }
+
+    @Test
+    void testComparator_withSalary() {
+
+        List<Person> persons = PersonFixture.getTestData();
+        Comparator<Person> personComparator = Comparator.comparing(Person::getSalary);
+
+        Assertions.assertEquals(-1, personComparator.compare(persons.get(0), persons.get(3)));
+        Assertions.assertEquals(0, personComparator.compare(persons.get(2), persons.get(3)));
+        Assertions.assertEquals(1, personComparator.compare(persons.get(1), persons.get(2)));
+    }
 
 }
