@@ -32,4 +32,26 @@ public class ComparatorTest {
         Assertions.assertEquals(1, personComparator.compare(persons.get(1), persons.get(2)));
     }
 
+    @Test
+    void testComparator_thenComparing() {
+
+        List<Person> persons = PersonFixture.getTestData();
+        Comparator<Person> personComparator = Comparator.comparing(Person::getAge).thenComparing(Person::getSalary);
+
+        Assertions.assertEquals(-1, personComparator.compare(persons.get(0), persons.get(3)));
+        Assertions.assertEquals(1, personComparator.compare(persons.get(2), persons.get(3)));
+    }
+
+    @Test
+    void testComparator_nullsLast() {
+
+        List<Person> persons = PersonFixture.getTestData();
+        Comparator<Person> personComparator = Comparator.comparing(Person::getFirstName);
+        Comparator<Person> personComparatorNull = Comparator.nullsLast(personComparator);
+
+        System.out.println(personComparatorNull.compare(persons.get(0), null));
+        System.out.println(personComparatorNull.compare(null, persons.get(0)));
+        System.out.println(personComparatorNull.compare(null, null));
+    }
+
 }
