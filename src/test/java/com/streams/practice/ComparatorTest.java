@@ -14,7 +14,10 @@ public class ComparatorTest {
     void testComparator_withAge() {
 
         List<Person> persons = PersonFixture.getTestData();
-        Comparator<Person> personComparator = Comparator.comparing(Person::getAge);
+        Comparator<Person> personComparator = null;
+
+        //  TODO Add Implementation
+        //Comparator<Person> personComparator = Comparator.comparing(Person::getAge);
 
         Assertions.assertEquals(0, personComparator.compare(persons.get(0), persons.get(3)));
         Assertions.assertEquals(1, personComparator.compare(persons.get(2), persons.get(3)));
@@ -25,7 +28,10 @@ public class ComparatorTest {
     void testComparator_withSalary() {
 
         List<Person> persons = PersonFixture.getTestData();
-        Comparator<Person> personComparator = Comparator.comparing(Person::getSalary);
+        Comparator<Person> personComparator = null;
+
+        //  TODO Add Implementation
+        //Comparator<Person> personComparator = Comparator.comparing(Person::getSalary);
 
         Assertions.assertEquals(-1, personComparator.compare(persons.get(0), persons.get(3)));
         Assertions.assertEquals(0, personComparator.compare(persons.get(2), persons.get(3)));
@@ -36,7 +42,10 @@ public class ComparatorTest {
     void testComparator_thenComparing() {
 
         List<Person> persons = PersonFixture.getTestData();
-        Comparator<Person> personComparator = Comparator.comparing(Person::getAge).thenComparing(Person::getSalary);
+        Comparator<Person> personComparator = null;
+
+        //  TODO Add Implementation
+        //Comparator<Person> personComparator = Comparator.comparing(Person::getAge).thenComparing(Person::getSalary);
 
         Assertions.assertEquals(-1, personComparator.compare(persons.get(0), persons.get(3)));
         Assertions.assertEquals(1, personComparator.compare(persons.get(2), persons.get(3)));
@@ -46,8 +55,11 @@ public class ComparatorTest {
     void testComparator_nullsLast() {
 
         List<Person> persons = PersonFixture.getTestData();
-        Comparator<Person> personComparator = Comparator.comparing(Person::getFirstName);
-        Comparator<Person> personComparatorNull = Comparator.nullsLast(personComparator);
+        Comparator<Person> personComparatorNull = null;
+
+        //  TODO Add Implementation
+        //Comparator<Person> personComparator = Comparator.comparing(Person::getFirstName);
+        //Comparator<Person> personComparatorNull = Comparator.nullsLast(personComparator);
 
         System.out.println(personComparatorNull.compare(persons.get(0), null));
         System.out.println(personComparatorNull.compare(null, persons.get(0)));
@@ -58,7 +70,10 @@ public class ComparatorTest {
     void testComparator_reversed() {
 
         List<Person> persons = PersonFixture.getTestData();
-        Comparator<Person> personComparatorReversed = Comparator.comparing(Person::getSalary).reversed();
+        Comparator<Person> personComparatorReversed = null;
+
+        //  TODO Add Implementation
+        //Comparator<Person> personComparatorReversed = Comparator.comparing(Person::getSalary).reversed();
 
         Assertions.assertEquals(1, personComparatorReversed.compare(persons.get(0), persons.get(3)));
         Assertions.assertEquals(0, personComparatorReversed.compare(persons.get(2), persons.get(3)));
