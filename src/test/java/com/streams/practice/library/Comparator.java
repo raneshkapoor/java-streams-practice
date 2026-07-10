@@ -35,4 +35,8 @@ public interface Comparator<T> {
         };
     }
 
+    default Comparator<T> reversed() {
+        return (o1, o2) -> this.compare(o2, o1);
+    }
+
 }

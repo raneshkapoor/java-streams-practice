@@ -54,4 +54,15 @@ public class ComparatorTest {
         System.out.println(personComparatorNull.compare(null, null));
     }
 
+    @Test
+    void testComparator_reversed() {
+
+        List<Person> persons = PersonFixture.getTestData();
+        Comparator<Person> personComparatorReversed = Comparator.comparing(Person::getSalary).reversed();
+
+        Assertions.assertEquals(1, personComparatorReversed.compare(persons.get(0), persons.get(3)));
+        Assertions.assertEquals(0, personComparatorReversed.compare(persons.get(2), persons.get(3)));
+        Assertions.assertEquals(-1, personComparatorReversed.compare(persons.get(1), persons.get(2)));
+    }
+
 }
