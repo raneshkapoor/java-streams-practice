@@ -80,4 +80,13 @@ public class ComparatorTest {
         Assertions.assertEquals(-1, personComparatorReversed.compare(persons.get(1), persons.get(2)));
     }
 
+    /*
+
+    What if the keyExcractor in the Comparator returns null?
+    We can use second comparator to specify null conditions in following way :
+
+    Comparator.comparing(Person::getFirstName, Comparator.nullsLast(Comparator.naturalOrder()));
+
+     */
+
 }
