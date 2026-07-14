@@ -48,4 +48,11 @@ public class Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        return "Person={FirstName=" + firstName + ", LastName=" + lastName +
+                ", Age=" + age + ", Salary=" + salary + "}";
+    }
+
 }
